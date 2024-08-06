@@ -1,0 +1,17 @@
+#hero {
+    background-color: var(--theme-light-2);
+    width: 100vw;
+    padding: 0px 50px;
+}
+
+#about {
+    background-color: aqua;
+    width: 100vw;
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+#miniPortfolio {
+    background-color: blue;
+}
