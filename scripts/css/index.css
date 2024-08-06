@@ -1,17 +1,32 @@
 #hero {
     background-color: var(--theme-light-2);
     width: 100vw;
+    height: 35rem;
     padding: 0px 50px;
+    position: relative;
+}
+
+#heroPortrait {
+    position: absolute;
+    right: 0rem;
+    bottom: 0rem;
+    width: 25%;
 }
 
 #about {
     background-color: aqua;
     width: 100vw;
     padding: 1rem 3rem;
-    margin-top: 3rem;
+    margin-top: var(--vertical-margin);
+}
+
+#about > section {
+    margin-inline: auto;
     text-align: center;
+    width: 50vw;
 }
 
 #miniPortfolio {
-    background-color: blue;
+    margin-top: var(--vertical-margin);
+    background-color: rgb(169, 169, 201);
 }

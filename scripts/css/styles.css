@@ -13,6 +13,8 @@ title {
 :root {
     --theme-light-1: #8fe1c4;
     --theme-light-2: #ffffff;
+
+    --vertical-margin: 3rem;
 }
 
 body {
@@ -20,5 +22,12 @@ body {
 }
 
 footer {
+    margin-top: var(--vertical-margin);
     background-color: var(--theme-light-2);
+}
+
+footer > p {
+    margin-inline: auto;
+    padding: 2rem 0rem 1.5rem;
+    text-align: center;
 }
