@@ -1,0 +1,68 @@
+
+/* The container for everything except the footer */
+main {
+    width: var(--content-width);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: auto 17rem;
+    gap: 1.5rem;
+    padding-top: 3rem;
+}
+@media screen and (max-width: 750px) {
+    main {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        padding-top: 0;
+    }
+}
+
+
+
+
+
+/* Main Left Side Container */
+#portfolioView {
+    position: sticky;
+    top: 3rem;
+    height: calc(100vh - 6rem);
+    background-color: aqua;
+    display: grid;
+    grid-template-rows: 10rem auto;
+}
+@media screen and (max-width: 750px) {
+    #portfolioView {
+        position: relative;
+        display: block;
+        height: fit-content;
+    }
+}
+
+/* Viewer (Desktop Size Only) */
+#viewerDesktop {
+    background-color: brown;
+}
+@media screen and (max-width: 750px) {
+    #viewerDesktop {
+        display: none;
+    }
+}
+
+
+
+
+
+/* Full Right Side */
+#portfolioFull {
+    background-color: blue;
+}
+@media screen and (max-width: 750px) {
+}
+
+
+
+
+
+/* Fullscreen Image Viewer */
+#fullView {
+    display: none;
+}
