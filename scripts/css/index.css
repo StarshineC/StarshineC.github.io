@@ -1,17 +1,33 @@
+/* Hero Banner */
+
 #hero {
     background-color: var(--theme-light-2);
     width: 100vw;
-    height: 35rem;
-    padding: 0px 50px;
+}
+
+#hero > section {
+    width: var(--content-width);
+    margin-inline: auto;
     position: relative;
+    height: 90vh;
+}
+
+#hero > section > h1 {
+    position: absolute;
+    top: 5%;
+    font-size: 5rem;
 }
 
 #heroPortrait {
     position: absolute;
     right: 0rem;
     bottom: 0rem;
-    width: 25%;
+    width: 50%;
 }
+
+
+
+/* About Section */
 
 #about {
     background-color: aqua;
@@ -23,10 +39,56 @@
 #about > section {
     margin-inline: auto;
     text-align: center;
-    width: 50vw;
+    width: var(--content-width);
 }
+
+
+
+/* Mini Portfolio */
 
 #miniPortfolio {
     margin-top: var(--vertical-margin);
     background-color: rgb(169, 169, 201);
+}
+
+#miniPortfolio > section {
+    display: grid;
+    width: var(--content-width);
+    height: min-content;
+    grid-template-columns: repeat(3, 30%);
+    grid-template-rows: 18vw;
+    gap: 5%;
+    margin-inline: auto;
+}
+@media screen and (max-width: 500px) {
+    #miniPortfolio > section {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, 45vw);
+        gap: 5vw;
+    }
+}
+
+.miniPortfolioButton {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    padding: 0;
+    border: none;
+}
+
+.portfolioIcon {
+    position: absolute;
+    right: 0;
+    bottom: 0%;
+    width: 30%;
+}
+
+#fullPortfolioButton {
+    display: block;
+    width: 20rem;
+    margin-top: 1rem;
+    margin-inline: auto;
+    border: none;
+    padding: 1rem 0;
 }

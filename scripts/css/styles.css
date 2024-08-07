@@ -15,6 +15,7 @@ title {
     --theme-light-2: #ffffff;
 
     --vertical-margin: 3rem;
+    --content-width: min(1080px, 90%);
 }
 
 body {
