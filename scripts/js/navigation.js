@@ -1,9 +1,11 @@
 
 // I have this because 3 buttons open portfolio entries
 function changePage(link, changeValue='') {
-    window.location.replace(link);
+    window.location.assign(link);
+    if (changeValue != '') sessionStorage.setItem('keyWord', changeValue);
 }
 
 function autoOpen() {
-    console.log("autoOpen ran, but there's nothing to do!")
+    if (sessionStorage.getItem != null) entryView(sessionStorage.getItem('keyWord'))
+    sessionStorage.clear();
 }

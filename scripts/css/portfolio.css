@@ -74,31 +74,39 @@ header h2 {
 
 .portfolioEntry {
     --entry-right-padding: 0.5rem;
+    --hover-transition: 0.05s;
     height: fit-content;
-    overflow: hidden;
     position: relative;
     width: 100%;
     border: none;
-    border-right: solid 0.25rem goldenrod;
-    padding-right: var(--entry-right-padding);
     text-align: left;
     background-color: transparent;
+    transition: all var(--hover-transition);
+}
+.portfolioEntry:hover {
+    border-right: solid 0.25rem goldenrod;
+    padding-right: var(--entry-right-padding);
 }
 
-.portfolioEntry > div {
+.thumbText {
     position: absolute;
     top: 10%;
+    left: 0;
     color: goldenrod;
     mix-blend-mode: difference;
+    transition: all var(--hover-transition);
+}
+.portfolioEntry:hover .thumbText {
+    left: 0.75rem;
 }
 
-.portfolioEntry > div > h2 {
+.thumbText > h2 {
     font-size: 1rem;
 }
 
-.portfolioEntry > div > h1 {
+.thumbText > h1 {
     font-size: 1.75rem;
-    width: 75%;
+    width: 80%;
 }
 
 .thumbnail {
@@ -113,8 +121,12 @@ header h2 {
 .thumbIcons {
     position: absolute;
     bottom: 0;
-    right: var(--entry-right-padding);
+    right: 0;
     width: 3rem;
+    transition: all var(--hover-transition);
+}
+.portfolioEntry:hover .thumbIcons {
+    right: var(--entry-right-padding);
 }
 
 
