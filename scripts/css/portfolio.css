@@ -25,7 +25,6 @@ main {
     position: sticky;
     top: 3rem;
     height: calc(100vh - 6rem);
-    background-color: aqua;
     display: grid;
     grid-template-rows: 10rem auto;
 }
@@ -35,6 +34,17 @@ main {
         display: block;
         height: fit-content;
     }
+}
+
+
+/* Header */
+
+header h1 {
+    font-size: 3rem;
+}
+
+header h2 {
+    font-size: 5rem;
 }
 
 /* Viewer (Desktop Size Only) */
@@ -52,12 +62,67 @@ main {
 
 
 /* Full Right Side */
-#portfolioFull {
-    background-color: blue;
-}
-@media screen and (max-width: 750px) {
+
+
+#portfolioList {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
+
+.portfolioEntry {
+    --entry-right-padding: 0.5rem;
+    height: fit-content;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    border: none;
+    border-right: solid 0.25rem goldenrod;
+    padding-right: var(--entry-right-padding);
+    text-align: left;
+    background-color: transparent;
+}
+
+.portfolioEntry > div {
+    position: absolute;
+    top: 10%;
+    color: goldenrod;
+    mix-blend-mode: difference;
+}
+
+.portfolioEntry > div > h2 {
+    font-size: 1rem;
+}
+
+.portfolioEntry > div > h1 {
+    font-size: 1.75rem;
+    width: 75%;
+}
+
+.thumbnail {
+    max-width: 12rem;
+    max-height: 15rem;
+    align-self: right;
+    bottom: 0;
+    right: 0;
+    /* Alignment Right is in the html */
+}
+
+.thumbIcons {
+    position: absolute;
+    bottom: 0;
+    right: var(--entry-right-padding);
+    width: 3rem;
+}
+
+
+#scrollToTop {
+    position: sticky;
+    bottom: 3rem;
+    color: red;
+}
 
 
 

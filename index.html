@@ -11,6 +11,8 @@
     
     <link rel="stylesheet" href="scripts/css/styles.css">
     <link rel="stylesheet" href="scripts/css/index.css">
+
+    <script src="scripts/js/navigation.js" defer></script>
 </head>
 
 
@@ -48,25 +50,25 @@
     <h1>Portfolio</h1>
     <section>
         <!-- Illustration  -->
-        <button class="miniPortfolioButton">
+        <button onClick="changePage('portfolio.html')" class="miniPortfolioButton">
             <h2>I Dunno</h2>
             <img>
             <img class="portfolioIcon" oncontextmenu="return false" src="media/icons/thumb-illustration.svg">
         </button>
         <!-- Video -->
-        <button class="miniPortfolioButton">
+        <button onClick="changePage('portfolio.html')" class="miniPortfolioButton">
             <h2>Hope</h2>
             <img>
             <img class="portfolioIcon" oncontextmenu="return false" src="media/icons/thumb-video.svg">
         </button>
         <!-- Programming Project -->
-        <button class="miniPortfolioButton">
+        <button onClick="changePage('portfolio.html')" class="miniPortfolioButton">
             <h2>Quicklinks (Semeseter 1)</h2>
             <img>
             <img class="portfolioIcon" oncontextmenu="return false" src="media/icons/thumb-code.svg">
         </button>
     </section>
-    <button id="fullPortfolioButton" href="portfolio.html">Full Portfolio</button>
+    <button onClick="changePage('portfolio.html')" id="fullPortfolioButton">Full Portfolio</button>
 </article>
 
 

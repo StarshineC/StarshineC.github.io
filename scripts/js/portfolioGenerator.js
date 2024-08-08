@@ -6,18 +6,30 @@ function formatImage(format) {
     return 'thumb-illustration.svg';
 }
 
+function sortByDate() {
+    console.log('hello');
+}
+
+function sortByTitle() {
+    console.log('hello');
+}
+
+
+
+
+
 function portfolioList() {
     for (entry of portfolioEntries) {
         console.log(entry);
         PORTFOLIOLIST.innerHTML += `
-        <div class="portfolioEntry">
+        <button class="portfolioEntry">
             <div>
                 <h2>${entry.displayDate}</h2>
                 <h1>${entry.title}</h1>
             </div>
-            <img src="media/portfolio/thumbnails/-${entry.format}-${entry.fileName}-0.webp">
-            <img src="media/icons/${formatImage(entry.format)}">
-        </div>
+            <img class="thumbnail" align="right" src="media/portfolio/thumbnails/-${entry.format}-${entry.fileName}-0.webp">
+            <img class="thumbIcons" src="media/icons/${formatImage(entry.format)}">
+        </button>
         `
     }
 }
