@@ -45,6 +45,7 @@ function sortByTitle(a, b) {
 // Reloads the portfolioList viewer
 function portfolioList(sortFunction) {
     // Clears Opened List
+    PORTFOLIOLIST.innerHTML = "";
 
     // Sort
     let sortedEntries = portfolioEntries;
@@ -59,7 +60,7 @@ function portfolioList(sortFunction) {
                 <h2>${entry.displayDate}</h2>
                 <h1>${entry.title}</h1>
             </div>
-            <img class="thumbnail" align="right" src="media/portfolio/thumbnails/-${entry.format}-${entry.fileName}-0.webp">
+            <img class="thumbnail" align="right" src="media/portfolio/thumbnails/thumb-${entry.format}-${entry.fileName}-0.webp">
             <img class="thumbIcons" src="media/icons/${formatImage(entry.format)}">
         </button>
         `
