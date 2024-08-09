@@ -75,47 +75,36 @@ function portfolioList(sortFunction) {
         </button>
         `
     }
+
+    filter(PORTFOLIOLIST.querySelectorAll(".formatCode"), portfolioFilters.code);
+    filter(PORTFOLIOLIST.querySelectorAll(".formatVideo"), portfolioFilters.video);
+    filter(PORTFOLIOLIST.querySelectorAll(".formatIllustration"), portfolioFilters.illustration);
+}
+
+// Filters formats
+function filter(selection, set = true) {
+    let entrys = selection;
+    if (set == true) for (entry of entrys) entry.style.display = "block";
+    else for (entry of entrys) entry.style.display = "none";
 }
 
 // Toggles format visibility on the list
 function toggleFormat(format = "illustration") {
+    // Programming Project
     if (format == 'code') {
-        if (portfolioFilters.code) {
-            portfolioFilters.code = false;
-            const FORMATCODE = PORTFOLIOLIST.querySelectorAll(".formatCode");
-            for (entry of FORMATCODE) entry.style.display = "none";
-        } else {
-            portfolioFilters.code = true;
-            const FORMATCODE = PORTFOLIOLIST.querySelectorAll(".formatCode");
-            for (entry of FORMATCODE) entry.style.display = "block";
-        }
+        portfolioFilters.code = !portfolioFilters.code;
+        filter(PORTFOLIOLIST.querySelectorAll(".formatCode"), portfolioFilters.code);
         return;
     }
-
+    // Video
     if (format == 'video') {
-        if (portfolioFilters.video) {
-            portfolioFilters.video = false;
-            const FORMATVIDEO = PORTFOLIOLIST.querySelectorAll(".formatVideo");
-            for (entry of FORMATVIDEO) entry.style.display = "none";
-        }
-        else {
-            portfolioFilters.video = true;
-            const FORMATVIDEO = PORTFOLIOLIST.querySelectorAll(".formatVideo");
-            for (entry of FORMATVIDEO) entry.style.display = "block";
-        }
+        portfolioFilters.video = !portfolioFilters.video;
+        filter(PORTFOLIOLIST.querySelectorAll(".formatVideo"), portfolioFilters.video);
         return;
     }
-
-    if (portfolioFilters.illustration) {
-        portfolioFilters.illustration = false;
-        const FORMATILLUSTRATION = PORTFOLIOLIST.querySelectorAll(".formatIllustration");
-        for (entry of FORMATILLUSTRATION) entry.style.display = "none";
-    }
-    else {
-        portfolioFilters.illustration = true;
-        const FORMATILLUSTRATION = PORTFOLIOLIST.querySelectorAll(".formatIllustration");
-        for (entry of FORMATILLUSTRATION) entry.style.display = "block";
-    }
+    // Illustration (Default)
+    portfolioFilters.illustration = !portfolioFilters.illustration;
+    filter(PORTFOLIOLIST.querySelectorAll(".formatIllustration"), portfolioFilters.illustration);
 }
 
 
