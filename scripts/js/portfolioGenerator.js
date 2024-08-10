@@ -10,8 +10,6 @@ const sortSelect = document.getElementsByName("sortSelect")[0];
 
 
 
-
-
 // Selects a Format Image to use in the corners of Thumbnails
 function formatImage(format) {
     if (format == 'Video') return 'thumb-video.svg';
@@ -131,3 +129,10 @@ function entryViewOpen(fileName) {
 function entryViewClose() {
     console.log("empty");
 }
+
+
+// Event listeners for Sort and Filter
+sortSelect.addEventListener("change", function() {portfolioListCreate()});
+filterBoxes.illustration.addEventListener("change", function() {toggleFormat('illustration')});
+filterBoxes.video.addEventListener("change", function() {toggleFormat('video')});
+filterBoxes.code.addEventListener("change", function() {toggleFormat('code')});
