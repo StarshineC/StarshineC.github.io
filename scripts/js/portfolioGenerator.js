@@ -131,6 +131,7 @@ function entryViewClose() {
 }
 
 
+
 // Event listeners for Sort and Filter
 sortSelect.addEventListener("change", function() {portfolioListCreate()});
 filterBoxes.illustration.addEventListener("change", function() {toggleFormat('illustration')});

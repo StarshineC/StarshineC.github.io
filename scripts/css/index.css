@@ -9,7 +9,7 @@
     width: var(--content-width);
     margin-inline: auto;
     position: relative;
-    height: 90vh;
+    height: 30rem;
 }
 
 #hero > section > h1 {
@@ -28,7 +28,8 @@
     position: absolute;
     right: 0rem;
     bottom: 0rem;
-    width: 50%;
+    max-width: 50%;
+    max-height: 29rem;
 }
 @media screen and (max-width: 500px) {
     #heroPortrait {
@@ -36,9 +37,17 @@
     }
 }
 
+#hero > section > p {
+    position: absolute;
+    bottom: 5rem;
+    right: 15%;
+}
+
 #hero > section > p > b {
-    color: goldenrod;
+    position: relative;
+    color: var(--theme-light-3);
     font-size: 3rem;
+    bottom: -0.5rem;
 }
 
 
@@ -46,7 +55,6 @@
 /* About Section */
 
 #about {
-    background-color: aqua;
     width: 100vw;
     padding: 1rem 3rem;
     margin-top: var(--vertical-margin);
@@ -55,7 +63,7 @@
 #about > section {
     margin-inline: auto;
     text-align: center;
-    width: var(--content-width);
+    width: min(750px, 85%);
 }
 
 
@@ -64,16 +72,21 @@
 
 #miniPortfolio {
     margin-top: var(--vertical-margin);
-    background-color: rgb(169, 169, 201);
+}
+
+#miniPortfolio > h1 {
+    font-size: 3rem;
+    text-align: center;
+    padding-bottom: 1.5rem;
 }
 
 #miniPortfolio > section {
-    display: grid;
+    display: flex;
+    align-items: center;
     width: var(--content-width);
     height: min-content;
-    grid-template-columns: repeat(3, 30%);
     grid-template-rows: 18vw;
-    gap: 5%;
+    gap: 2rem;
     margin-inline: auto;
 }
 @media screen and (max-width: 500px) {
@@ -86,18 +99,30 @@
 
 .miniPortfolioButton {
     width: 100%;
-    height: 100%;
+    height: fit-content;
     display: block;
     position: relative;
     padding: 0;
     border: none;
 }
 
+.miniPortfolioButton > h2 {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    color: var(--theme-light-3);
+    mix-blend-mode: difference;
+}
+
+.miniDisplay {
+    width: 100%;
+}
+
 .portfolioIcon {
     position: absolute;
     right: 0;
     bottom: 0%;
-    width: 30%;
+    width: 3rem;
 }
 
 #fullPortfolioButton {

@@ -23,6 +23,7 @@ title {
 :root {
     --theme-light-1: #8fe1c4;
     --theme-light-2: #ffffff;
+    --theme-light-3: goldenrod;
 
     --vertical-margin: 3rem;
     --content-width: min(1200px, 85%);
