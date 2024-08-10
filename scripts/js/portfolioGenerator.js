@@ -104,7 +104,7 @@ function portfolioList(sortFunction) {
                 <h2>${entry.displayDate}</h2>
                 <h1>${entry.title}</h1>
             </div>
-            <img class="thumbnail" align="right" src="media/portfolio/thumbnails/thumb-${entry.format}-${entry.fileName}-0.webp" oncontextmenu="return false">
+            <img class="thumbnail" align="right" src="media/portfolio/thumbnails/thumb-${entry.format}-${entry.fileName}-0.webp" alt="${entry.fileName}" oncontextmenu="return false">
             <img class="thumbIcons" src="media/icons/${formatImage(entry.format)}" oncontextmenu="return false">
         </button>
         `

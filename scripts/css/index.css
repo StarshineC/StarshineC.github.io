@@ -36,6 +36,11 @@
     }
 }
 
+#hero > section > p > b {
+    color: goldenrod;
+    font-size: 3rem;
+}
+
 
 
 /* About Section */
