@@ -19,7 +19,7 @@
 
 
 
-<body onload="portfolioList(sortByDate);">
+<body onload="portfolioListCreate()">
 
 
 
@@ -49,22 +49,22 @@
         <section id="portfolioToggles">
             <div>
                 <label>Sort by: </label>
-                <select>
-                    <option onclick="portfolioList(sortByDate);" value="date">Date</option>
-                    <option onclick="portfolioList(sortByTitle);" value="title">Title</option>
+                <select name="sortSelect">
+                    <option onclick="portfolioListCreate()" value="date">Date</option>
+                    <option onclick="portfolioListCreate()" value="title">Title</option>
                 </select>
             </div>
             <div>
                 <div>
-                    <input type="checkbox" onclick="toggleFormat('illustration');">
+                    <input type="checkbox" onclick="toggleFormat('illustration');" id="filterIllustration" checked>
                     <label>Illustration</label>
                 </div>
                 <div>
-                    <input type="checkbox" onclick="toggleFormat('video')">
+                    <input type="checkbox" onclick="toggleFormat('video')" id="filterVideo" checked>
                     <label>Video</label>
                 </div>
                 <div>
-                    <input type="checkbox" onclick="toggleFormat('code')">
+                    <input type="checkbox" onclick="toggleFormat('code')" id="filterCode" checked>
                     <label>Programming Project</label>
                 </div>
             </div>

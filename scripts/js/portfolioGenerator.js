@@ -1,9 +1,15 @@
+
 const PORTFOLIOLIST = document.querySelector("#portfolioList");
-let portfolioFilters = {
-    illustration: true,
-    video: true,
-    code: true
+const filterBoxes = {
+    illustration: document.querySelector("#filterIllustration"),
+    video:        document.querySelector("#filterVideo"),
+    code:         document.querySelector("#filterCode")
 }
+
+const sortSelect = document.getElementsByName("sortSelect")[0];
+
+
+
 
 
 // Selects a Format Image to use in the corners of Thumbnails
@@ -18,6 +24,30 @@ function formatClass(format) {
     if (format == 'Programming Project') return 'formatCode';
     return 'formatIllustration';
 }
+
+
+
+
+
+// Filters formats
+function filter(selection, set = true) {
+    let entrys = selection;
+    if (set == true) for (entry of entrys) entry.style.display = "block";
+    else for (entry of entrys) entry.style.display = "none";
+}
+
+// Toggles format visibility on the list
+function toggleFormat(format = "illustration") {
+    // Programming Project
+    if (format == 'code') filter(PORTFOLIOLIST.querySelectorAll(".formatCode"), filterBoxes.code.checked);
+    // Video
+    else if (format == 'video') filter(PORTFOLIOLIST.querySelectorAll(".formatVideo"), filterBoxes.video.checked);
+    // Illustration (Default)
+    else filter(PORTFOLIOLIST.querySelectorAll(".formatIllustration"), filterBoxes.illustration.checked);
+}
+
+
+
 
 
 // Sorters
@@ -53,6 +83,12 @@ function sortByTitle(a, b) {
 
 
 
+
+function portfolioListCreate() {
+    if (sortSelect.value == "date") portfolioList(sortByDate);
+    else portfolioList(sortByTitle);
+}
+
 // Reloads the portfolioList viewer
 function portfolioList(sortFunction) {
     // Clears Opened List
@@ -76,36 +112,11 @@ function portfolioList(sortFunction) {
         `
     }
 
-    filter(PORTFOLIOLIST.querySelectorAll(".formatCode"), portfolioFilters.code);
-    filter(PORTFOLIOLIST.querySelectorAll(".formatVideo"), portfolioFilters.video);
-    filter(PORTFOLIOLIST.querySelectorAll(".formatIllustration"), portfolioFilters.illustration);
+    filter(PORTFOLIOLIST.querySelectorAll(".formatCode"), filterBoxes.code.checked);
+    filter(PORTFOLIOLIST.querySelectorAll(".formatVideo"), filterBoxes.video.checked);
+    filter(PORTFOLIOLIST.querySelectorAll(".formatIllustration"), filterBoxes.illustration.checked);
 }
 
-// Filters formats
-function filter(selection, set = true) {
-    let entrys = selection;
-    if (set == true) for (entry of entrys) entry.style.display = "block";
-    else for (entry of entrys) entry.style.display = "none";
-}
-
-// Toggles format visibility on the list
-function toggleFormat(format = "illustration") {
-    // Programming Project
-    if (format == 'code') {
-        portfolioFilters.code = !portfolioFilters.code;
-        filter(PORTFOLIOLIST.querySelectorAll(".formatCode"), portfolioFilters.code);
-        return;
-    }
-    // Video
-    if (format == 'video') {
-        portfolioFilters.video = !portfolioFilters.video;
-        filter(PORTFOLIOLIST.querySelectorAll(".formatVideo"), portfolioFilters.video);
-        return;
-    }
-    // Illustration (Default)
-    portfolioFilters.illustration = !portfolioFilters.illustration;
-    filter(PORTFOLIOLIST.querySelectorAll(".formatIllustration"), portfolioFilters.illustration);
-}
 
 
 

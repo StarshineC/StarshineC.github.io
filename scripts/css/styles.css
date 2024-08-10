@@ -1,9 +1,19 @@
+/* Merriweather */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+/* Noto Serif */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+/* Domine */
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
 /* -=-=-= Global Definitions=-=-=- */
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Domine", serif;
 }
 
 title {
@@ -15,7 +25,7 @@ title {
     --theme-light-2: #ffffff;
 
     --vertical-margin: 3rem;
-    --content-width: min(1080px, 85%);
+    --content-width: min(1200px, 85%);
 }
 
 body {
