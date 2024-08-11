@@ -16,9 +16,14 @@ function generateMiniPortfolioEntry(index, fileName) {
     let entry = searchEntry(fileName);
     console.log(entry);
     miniPortfolioButtons[index].insertAdjacentHTML("afterbegin", `
-        <h2>${entry.title}</h2>
-        <img src="media/portfolio/resizedImages/portfolio-${entry.format}-${entry.fileName}-0.webp" alt="${entry.fileName}" oncontextmenu="return false" class="miniDisplay">
-        <img class="portfolioIcon" oncontextmenu="return false" src="media/icons/${formatImage(entry.format)}">
+        <div class = "miniPortfolioThumb">
+            <img src="media/portfolio/resizedImages/portfolio-${entry.format}-${entry.fileName}-0.webp" alt="${entry.fileName}" oncontextmenu="return false" class="miniDisplay">
+            <img class="portfolioIcon" oncontextmenu="return false" src="media/icons/${formatImage(entry.format)}">
+        </div>
+        <div class="miniPortfolioDescription">
+            <h3>${entry.displayDate}</h3>
+            <h2>${entry.title}</h2>
+        </div>
         `)
 }
 
