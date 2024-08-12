@@ -57,6 +57,11 @@ header h2 {
     }
 }
 
+#viewerDesktop > img {
+    max-width: 100%;
+    max-height: 20rem;
+}
+
 
 
 

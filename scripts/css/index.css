@@ -1,9 +1,15 @@
 /* Hero Banner */
 
 #hero {
+    --clip-arrow-height: 5rem;
     background-color: var(--theme-light-2);
     width: 100vw;
-    clip-path: polygon(0 0, 0 85%, 50% 100%, 100% 85%, 100% 0);
+    clip-path: polygon(0 0, 0 calc(100% - var(--clip-arrow-height)), 50% 100%, 100% calc(100% - var(--clip-arrow-height)), 100% 0);
+}
+@media screen and (max-width: 500px) {
+    #hero {
+        --clip-arrow-height: 2rem;
+    }
 }
 
 #hero > section {
@@ -30,11 +36,13 @@
     right: 0rem;
     bottom: 0rem;
     max-width: 50%;
-    max-height: 29rem;
+    max-height: 95%;
 }
 @media screen and (max-width: 500px) {
     #heroPortrait {
-        width: 100%;
+        max-width: 100%;
+        right: 0vw;
+        max-height: 95%;
     }
 }
 
@@ -43,12 +51,28 @@
     bottom: 5rem;
     right: 15%;
 }
+@media screen and (max-width: 750px) {
+    #hero > section > p {
+        right: 0;
+    }
+}
+@media screen and (max-width: 500px) {
+    #hero > section > p {
+        left: 0;
+    }
+}
 
 #hero > section > p > b {
     position: relative;
     color: var(--theme-light-3);
     font-size: 3rem;
     bottom: -0.5rem;
+}
+@media screen and (max-width: 500px) {
+    #hero > section > p > b {
+        font-size: 1.75rem;
+        bottom: -0.25rem;
+    }
 }
 
 
@@ -114,7 +138,7 @@
     outline: solid 0 var(--theme-light-3);;
 }
 
-.miniPortfolioThumb:hover {
+.miniPortfolioButton:hover .miniPortfolioThumb {
     outline: solid 0.25rem var(--theme-light-3);
 }
 

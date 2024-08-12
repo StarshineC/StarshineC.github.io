@@ -6,9 +6,17 @@ const filterBoxes = {
     code:         document.querySelector("#filterCode")
 }
 
-const sortSelect = document.getElementsByName("sortSelect")[0];
+const SORTSELECT = document.getElementsByName("sortSelect")[0];
+
+const VIEWERDESKTOP = document.querySelector("#viewerDesktop");
 
 
+
+// Search
+function searchEntry(fileName) {
+    for (entry of portfolioEntries) if (fileName == entry.fileName) return entry;
+    return null;
+}
 
 // Selects a Format Image to use in the corners of Thumbnails
 function formatImage(format) {
@@ -83,7 +91,7 @@ function sortByTitle(a, b) {
 
 
 function portfolioListCreate() {
-    if (sortSelect.value == "date") portfolioList(sortByDate);
+    if (SORTSELECT.value == "date") portfolioList(sortByDate);
     else portfolioList(sortByTitle);
 }
 
@@ -98,8 +106,8 @@ function portfolioList(sortFunction) {
 
     // Creats List View
     for (entry of sortedEntries) {
-        PORTFOLIOLIST.innerHTML += `
-        <button class="portfolioEntry ${formatClass(entry.format)}">
+        PORTFOLIOLIST.insertAdjacentHTML("beforeend", `
+        <button class="portfolioEntry ${formatClass(entry.format)}" onclick="entryViewOpen('${entry.fileName}');">
             <div class="thumbText">
                 <h2>${entry.displayDate}</h2>
                 <h1>${entry.title}</h1>
@@ -107,7 +115,7 @@ function portfolioList(sortFunction) {
             <img class="thumbnail" align="right" src="media/portfolio/thumbnails/thumb-${entry.format}-${entry.fileName}-0.webp" alt="${entry.fileName}" oncontextmenu="return false">
             <img class="thumbIcons" src="media/icons/${formatImage(entry.format)}" oncontextmenu="return false">
         </button>
-        `
+        `);
     }
 
     filter(PORTFOLIOLIST.querySelectorAll(".formatCode"), filterBoxes.code.checked);
@@ -122,18 +130,24 @@ function portfolioList(sortFunction) {
 // Opens the viewers for the selected file
 function entryViewOpen(fileName) {
     entryViewClose();
-    console.log('empty');
+    let entry = searchEntry(fileName);
+    VIEWERDESKTOP.insertAdjacentHTML("afterbegin", `
+        <h2>${entry.displayDate}</h2>
+        <h1>${entry.title}</h1>
+        <p>${entry.description}</p>
+        <img src="media/portfolio/resizedImages/portfolio-${entry.format}-${entry.fileName}-0.webp">
+    `);
 }
 
 // Closes the currently open viewer for the selected file
 function entryViewClose() {
-    console.log("empty");
+    VIEWERDESKTOP.innerHTML = '';
 }
 
 
 
 // Event listeners for Sort and Filter
-sortSelect.addEventListener("change", function() {portfolioListCreate()});
+SORTSELECT.addEventListener("change", function() {portfolioListCreate()});
 filterBoxes.illustration.addEventListener("change", function() {toggleFormat('illustration')});
 filterBoxes.video.addEventListener("change", function() {toggleFormat('video')});
 filterBoxes.code.addEventListener("change", function() {toggleFormat('code')});
