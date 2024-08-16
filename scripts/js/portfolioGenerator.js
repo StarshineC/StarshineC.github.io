@@ -6,9 +6,10 @@ const filterBoxes = {
     code:         document.querySelector("#filterCode")
 }
 
-const SORTSELECT = document.getElementsByName("sortSelect")[0];
+const SORTSELECT    = document.getElementsByName("sortSelect")[0];
 
 const VIEWERDESKTOP = document.querySelector("#viewerDesktop");
+let   VIEWERMOBILE  = document.querySelectorAll(".viewerMobile");
 
 
 
@@ -105,9 +106,10 @@ function portfolioList(sortFunction) {
     sortedEntries.sort(sortFunction);
 
     // Creats List View
+    let i = 0;
     for (entry of sortedEntries) {
         PORTFOLIOLIST.insertAdjacentHTML("beforeend", `
-        <button class="portfolioEntry ${formatClass(entry.format)}" onclick="entryViewOpen('${entry.fileName}');">
+        <button class="portfolioEntry ${formatClass(entry.format)}" onclick="entryViewOpen('${entry.fileName}', ${i++});">
             <div class="thumbText">
                 <h2>${entry.displayDate}</h2>
                 <h1>${entry.title}</h1>
@@ -115,9 +117,13 @@ function portfolioList(sortFunction) {
             <img class="thumbnail" align="right" src="media/portfolio/thumbnails/thumb-${entry.format}-${entry.fileName}-0.webp" alt="${entry.fileName}" oncontextmenu="return false">
             <img class="thumbIcons" src="media/icons/${formatImage(entry.format)}" oncontextmenu="return false">
         </button>
+        <div class="viewerMobile">
+        </div>
         `);
     }
-
+    
+    VIEWERMOBILE = document.querySelectorAll(".viewerMobile");
+    console.log("Logged");
     filter(PORTFOLIOLIST.querySelectorAll(".formatCode"), filterBoxes.code.checked);
     filter(PORTFOLIOLIST.querySelectorAll(".formatVideo"), filterBoxes.video.checked);
     filter(PORTFOLIOLIST.querySelectorAll(".formatIllustration"), filterBoxes.illustration.checked);
@@ -128,8 +134,10 @@ function portfolioList(sortFunction) {
 
 
 // Opens the viewers for the selected file
-function entryViewOpen(fileName) {
+function entryViewOpen(fileName, mobileIndex) {
+    
     entryViewClose();
+
     let entry = portfolioEntries.find(entry => entry.fileName == fileName);
     VIEWERDESKTOP.insertAdjacentHTML("beforeend", `
         <h2>${entry.displayDate}</h2>
@@ -147,11 +155,29 @@ function entryViewOpen(fileName) {
         console.log("hi!");
     }
     VIEWERDESKTOP.insertAdjacentHTML("beforeend", '</div>');
+    
+    VIEWERMOBILE[mobileIndex].insertAdjacentHTML("beforeend", `
+        <h2>${entry.displayDate}</h2>
+        <h1>${entry.title}</h1>
+        <p>${entry.description}</p>
+        <img src="media/portfolio/resizedImages/portfolio-${entry.format}-${entry.fileName}-0.webp" onclick="imageFullOpen('media/portfolio/resizedImages/portfolio-${entry.format}-${entry.fileName}-0.webp');">
+        <div>
+    `);
+    console.log(entry.fileCount);    
+    for(let i = 1; i < entry.fileCount; i++) {
+        console.log(`thumb-${entry.format}-${entry.fileName}-${i}.webp`);
+        VIEWERMOBILE[mobileIndex].insertAdjacentHTML("beforeend", `
+            <img src="media/portfolio/thumbnails/thumb-${entry.format}-${entry.fileName}-${i}.webp" onclick="imageFullOpen('media/portfolio/resizedImages/portfolio-${entry.format}-${entry.fileName}-${i}.webp');">
+        `);
+        console.log("hi!");
+    }
+    VIEWERMOBILE[mobileIndex].insertAdjacentHTML("beforeend", '</div>');
 }
 
 // Closes the currently open viewer for the selected file
 function entryViewClose() {
     VIEWERDESKTOP.innerHTML = '';
+    for (let i = 0; i < portfolioEntries.length; i++) VIEWERMOBILE[i].innerHTML = '';
 }
 
 

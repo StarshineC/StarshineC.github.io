@@ -7,10 +7,11 @@ function changePage(link, changeValue=null) {
 
 function autoOpen() {
     console.log("AutoOpen()");
-    console.log(sessionStorage.getItem('keyWord'))
-    if (sessionStorage.getItem('keyWord') != null) {
-        console.log("Item Get!");
-        entryViewOpen(sessionStorage.getItem('keyWord'))
+    let keyWord = sessionStorage.getItem('keyWord')
+    console.log(keyWord);
+    sortIndex = portfolioEntries.sort((SORTSELECT.value == "date") ? sortByDate : sortByTitle).indexOf(portfolioEntries.find(entry => entry.fileName == keyWord));
+    if (sortIndex >= 0) {
+        entryViewOpen(keyWord, sortIndex)
     }
     sessionStorage.clear();
 }

@@ -9,7 +9,7 @@ let portfolioEntries = [
 		sortedDate: '20221220',
 		displayDate: 'December 20, 2022',
 		url: '',
-		description: 'Acrylic | 15x20in\n\nThis is a work that focuses on patterns and contrast. I also learned some adobe illustrator features along the way, including tiling.',
+		description: 'Acrylic | 15x20in[newLine][newLine]This is a work that focuses on patterns and contrast. I also learned some adobe illustrator features along the way, including tiling.',
 	},
 	{
 		title: 'Color Value Study',
@@ -19,7 +19,7 @@ let portfolioEntries = [
 		sortedDate: '20220310',
 		displayDate: 'March 10, 2022',
 		url: '',
-		description: 'Acrylic | 20x30 in\n\nA photograph of somebody I knew was observed by value. I then assigned a color to each value, matched by relative value. I then simply painted that selection.',
+		description: 'Acrylic | 20x30 in[newLine][newLine]A photograph of somebody I knew was observed by value. I then assigned a color to each value, matched by relative value. I then simply painted that selection.',
 	},
 	{
 		title: 'Still Life',
@@ -29,7 +29,7 @@ let portfolioEntries = [
 		sortedDate: '20221123',
 		displayDate: 'November 23, 2022',
 		url: '',
-		description: 'Colored Pencil | 13.5x11 in\n\nI wanted to capture several objects that represent who I am. These objects are things I wear, and what I need to be me. I wanted to experiment with colored pencil as well, so colored shading was used there.',
+		description: 'Colored Pencil | 13.5x11 in[newLine][newLine]I wanted to capture several objects that represent who I am. These objects are things I wear, and what I need to be me. I wanted to experiment with colored pencil as well, so colored shading was used there.',
 	},
 	{
 		title: 'Showtime',
@@ -39,7 +39,7 @@ let portfolioEntries = [
 		sortedDate: '20220429',
 		displayDate: 'April 29, 2022',
 		url: '',
-		description: 'Digital 3D Model | 1080x1920 px\n\nThis was during my learning times of figuring out how to model in 3D. This means that the model itself isn’t even that good. The lighting was purely accidental, but I turned it into a stage scene.',
+		description: 'Digital 3D Model | 1080x1920 px[newLine][newLine]This was during my learning times of figuring out how to model in 3D. This means that the model itself isn’t even that good. The lighting was purely accidental, but I turned it into a stage scene.',
 	},
 	{
 		title: 'Design and Visual Communications Banner',
@@ -49,7 +49,7 @@ let portfolioEntries = [
 		sortedDate: '20220101',
 		displayDate: '2022',
 		url: '',
-		description: 'Digital/Banner Material | 18x48 in\n\nThis is a design of the stanchion poster for Keefe Tech’s Design and Visual Communications shop. Each square represents the elements of design.\n\nThis banner was actually selected to be the base for the designs of the other shops. I only made the Design and Visual banner, everything else was made by others.',
+		description: 'Digital/Banner Material | 18x48 in[newLine][newLine]This is a design of the stanchion poster for Keefe Tech’s Design and Visual Communications shop. Each square represents the elements of design.[newLine][newLine]This banner was actually selected to be the base for the designs of the other shops. I only made the Design and Visual banner, everything else was made by others.',
 	},
 	{
 		title: 'Forest',
@@ -69,7 +69,7 @@ let portfolioEntries = [
 		sortedDate: '20221026',
 		displayDate: 'October 26, 2022',
 		url: 'https://youtu.be/HGneardwIkw',
-		description: 'Pen/Digital/Photography | 6000x4000 px (Original Video)\n\nI created this self portrait in a way that tells people that I like to explore who I am. I\ntried doing it in a fun way where I make who I am.',
+		description: 'Pen/Digital/Photography | 6000x4000 px (Original Video)[newLine][newLine]I created this self portrait in a way that tells people that I like to explore who I am. I[newLine]tried doing it in a fun way where I make who I am.',
 	},
 	{
 		title: 'Master Study: Hiroshige',
@@ -79,7 +79,7 @@ let portfolioEntries = [
 		sortedDate: '20220101',
 		displayDate: '2022-2023',
 		url: '',
-		description: 'Printmaking/Ink | 10x8 in\n\nI used print making to create this piece. I sliced a\nlinoleum block to recreate a piece by the Ukiyo-e artist, Hiroshige.',
+		description: 'Printmaking/Ink | 10x8 in[newLine][newLine]I used print making to create this piece. I sliced a[newLine]linoleum block to recreate a piece by the Ukiyo-e artist, Hiroshige.',
 	},
 	{
 		title: 'Quick Links Semester 1',
@@ -89,7 +89,7 @@ let portfolioEntries = [
 		sortedDate: '20230101',
 		displayDate: 'January 1, 2023',
 		url: 'https://starshinec.github.io/quicklinks-semester-1-ver-portfolio/',
-		description: 'This is a personal quick links page I made for myself in my first semester in order to access links for my classes quickly. This was simply practice for web design, alongside being a convenient way for me to view everything easily.\n\nThe included weblink actually isn’t the real thing. For privacy purposes, I’ve removed all of the actual weblinks for the portfolio version.',
+		description: 'This is a personal quick links page I made for myself in my first semester in order to access links for my classes quickly. This was simply practice for web design, alongside being a convenient way for me to view everything easily.[newLine][newLine]The included weblink actually isn’t the real thing. For privacy purposes, I’ve removed all of the actual weblinks for the portfolio version.',
 	},
 	{
 		title: 'Stereoscopic 3D Test',
@@ -109,7 +109,7 @@ let portfolioEntries = [
 		sortedDate: '20221011',
 		displayDate: 'October 11, 2022',
 		url: 'https://youtu.be/b8KV2QqGJT0?si=ikMYOvsxJeoPO7fY',
-		description: 'This is a tutorial for people who don’t know how the lines in adobe products work. I\ntried styling this as an old instructional video for school children. Most of the assets used aren’t actually mine. I found them in free-to-use websites, including the music.',
+		description: 'This is a tutorial for people who don’t know how the lines in adobe products work. I[newLine]tried styling this as an old instructional video for school children. Most of the assets used aren’t actually mine. I found them in free-to-use websites, including the music.',
 	},
 	{
 		title: 'Hope',
@@ -134,7 +134,7 @@ let portfolioEntries = [
 	{
 		title: 'Personal Website',
 		fileName: 'personalWebsite',
-		fileCount: 0,
+		fileCount: 2,
 		format: 'Programming Project',
 		sortedDate: '20240807',
 		displayDate: 'August 7, 2024',
@@ -149,7 +149,7 @@ let portfolioEntries = [
 		sortedDate: '20220101',
 		displayDate: '2022-2023',
 		url: '',
-		description: 'Watercolor, Paper | 8.5x11 in.\n\n2 Penguins were walking amongst colorful terrain. One can see color, the other is\ncolor. Both are examples of the use of negative space.',
+		description: 'Watercolor, Paper | 8.5x11 in.[newLine][newLine]2 Penguins were walking amongst colorful terrain. One can see color, the other is[newLine]color. Both are examples of the use of negative space.',
 	},
 	{
 		title: 'Windmill',
@@ -159,6 +159,6 @@ let portfolioEntries = [
 		sortedDate: '20220101',
 		displayDate: '2022',
 		url: '',
-		description: 'Watercolor/Acryllic | 9x12 in\n\nA windmill is on the street, and it’s collecting wind to assist the farm. With a reference photograph, I actually did this piece twice in 2 separate mediums. I did it in watercolor to see how layering colors worked, and in acrylic to see how it compared to the watercolor piece.',
+		description: 'Watercolor/Acryllic | 9x12 in[newLine][newLine]A windmill is on the street, and it’s collecting wind to assist the farm. With a reference photograph, I actually did this piece twice in 2 separate mediums. I did it in watercolor to see how layering colors worked, and in acrylic to see how it compared to the watercolor piece.',
 	}
 ]
