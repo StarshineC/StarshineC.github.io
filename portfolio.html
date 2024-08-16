@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="scripts/css/styles.css">
     <link rel="stylesheet" href="scripts/css/portfolio.css">
 
-    <script src="scripts/js/navigation.js" defer></script>
     <script src="scripts/js/portfolioEntries.js" defer></script>
     <script src="scripts/js/portfolioGenerator.js" defer></script>
+    <script src="scripts/js/navigation.js" defer></script>
 </head>
 
 
 
-<body onload="portfolioListCreate();">
+<body onload="autoOpen(); portfolioListCreate();">
 
 
 
@@ -71,11 +71,14 @@
         </section>
         <!-- Portfolio List -->
         <section id="portfolioList"></section>
+
     </article>
 </main>
 
 <!-- Full view for images -->
-<article id="fullView">
+<article id="fullView" onclick="imageFullClose();">
+    <div></div>
+    <img>
 </article>
 
 

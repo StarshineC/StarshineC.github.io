@@ -12,11 +12,11 @@ const VIEWERDESKTOP = document.querySelector("#viewerDesktop");
 
 
 
-// Search
-function searchEntry(fileName) {
+// Search (Depracated: I found out array.find() exists)
+/*function searchEntry(fileName) {
     for (entry of portfolioEntries) if (fileName == entry.fileName) return entry;
     return null;
-}
+}*/
 
 // Selects a Format Image to use in the corners of Thumbnails
 function formatImage(format) {
@@ -130,18 +130,44 @@ function portfolioList(sortFunction) {
 // Opens the viewers for the selected file
 function entryViewOpen(fileName) {
     entryViewClose();
-    let entry = searchEntry(fileName);
-    VIEWERDESKTOP.insertAdjacentHTML("afterbegin", `
+    let entry = portfolioEntries.find(entry => entry.fileName == fileName);
+    VIEWERDESKTOP.insertAdjacentHTML("beforeend", `
         <h2>${entry.displayDate}</h2>
         <h1>${entry.title}</h1>
         <p>${entry.description}</p>
-        <img src="media/portfolio/resizedImages/portfolio-${entry.format}-${entry.fileName}-0.webp">
+        <img src="media/portfolio/resizedImages/portfolio-${entry.format}-${entry.fileName}-0.webp" onclick="imageFullOpen('media/portfolio/resizedImages/portfolio-${entry.format}-${entry.fileName}-0.webp');">
+        <div>
     `);
+    console.log(entry.fileCount);    
+    for(let i = 1; i < entry.fileCount; i++) {
+        console.log(`thumb-${entry.format}-${entry.fileName}-${i}.webp`);
+        VIEWERDESKTOP.insertAdjacentHTML("beforeend", `
+            <img src="media/portfolio/thumbnails/thumb-${entry.format}-${entry.fileName}-${i}.webp" onclick="imageFullOpen('media/portfolio/resizedImages/portfolio-${entry.format}-${entry.fileName}-${i}.webp');">
+        `);
+        console.log("hi!");
+    }
+    VIEWERDESKTOP.insertAdjacentHTML("beforeend", '</div>');
 }
 
 // Closes the currently open viewer for the selected file
 function entryViewClose() {
     VIEWERDESKTOP.innerHTML = '';
+}
+
+
+
+function imageFullOpen(image) {
+    console.log("Hello!");
+    document.querySelector("#fullView").style.top = "0";
+    document.querySelector("#fullView div").style.transform = "translate(-50%, -50%) scale(100%, 100%)";
+    document.querySelector("#fullView img").src = image;
+    document.querySelector("#fullView img").style.opacity = "100%";
+}
+
+function imageFullClose() {
+    document.querySelector("#fullView div").style.transform = "translate(-50%, -50%) scale(0, 0)";
+    document.querySelector("#fullView img").style.opacity = "0";
+    setTimeout(function() {document.querySelector("#fullView").style.top = "-100vh";}, 250);
 }
 
 
