@@ -1,3 +1,5 @@
+If you're reading this past 2026, this site is outdated.
+
 # StarshineC.github.io
 Portfolio/Personal Website
 
